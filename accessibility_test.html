@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Accessibility Test Page</title>
+    <style>
+        /* VIOLATION: Poor color contrast (light gray text on white background) */
+        .poor-contrast {
+            color: #D3D3D3;
+            background-color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- VIOLATION: Heading levels skipped (h1 to h3) -->
+    <h1>Main Title</h1>
+    <h3>Sub-heading with skipped level</h3>
+
+    <!-- VIOLATION: Image missing 'alt' attribute -->
+    <img src="logo.png">
+
+    <!-- VIOLATION: Empty link with no descriptive text -->
+    <a href="https://example.com"></a>
+
+    <!-- VIOLATION: Clickable element using a generic div instead of a button -->
+    <div onclick="alert('Clicked!')">Click Me</div>
+
+    <!-- VIOLATION: Form input missing a matching label or aria-label -->
+    <input type="text" name="username">
+
+    <!-- VIOLATION: Text looks like a heading but uses generic bold tags -->
+    <p><b>Visual Heading but not semantic</b></p>
+
+    <!-- VIOLATION: Low contrast text container -->
+    <p class="poor-contrast">This text is very hard to read.</p>
+
+</body>
+</html>
